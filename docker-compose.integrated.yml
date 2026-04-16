@@ -1,0 +1,102 @@
+version: '3.8'
+
+services:
+  # ========================================
+  # AI Digital Human Backend (VirtualTeacher2.0)
+  # ========================================
+  chatbot:
+    image: okapi0129/virtualwife-chatbot:${CHATBOT_TAG:-latest}
+    container_name: virtualteacher-chatbot
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "8000:8000"
+    environment:
+      - TZ=${TIMEZONE:-Asia/Shanghai}
+      - DJANGO_SETTINGS_MODULE=VirtualWife.settings
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=qwen-plus
+      - HTTP_PROXY=${HTTP_PROXY:-}
+      - HTTPS_PROXY=${HTTPS_PROXY:-}
+      - NO_PROXY=localhost,127.0.0.1
+    env_file:
+      - "${ENV_FILE:-./VirtualTeacher2.0/installer/.env}"
+    volumes:
+      - ./VirtualTeacher2.0/domain-chatbot/db:/app/db
+      - ./VirtualTeacher2.0/domain-chatbot/logs:/app/logs
+    networks:
+      - smart-learning-network
+
+  # ========================================
+  # AI Digital Human Frontend (VRM) - 包含人脸识别功能
+  # ========================================
+  chatvrm:
+    image: okapi0129/virtualwife-chatvrm:${CHATVRM_TAG:-face-recognition}
+    container_name: virtualteacher-chatvrm
+    restart: unless-stopped
+    environment:
+      - TZ=${TIMEZONE:-Asia/Shanghai}
+      - NEXT_PUBLIC_API_URL=http://chatbot:8000
+      - NEXT_PUBLIC_FACE_RECOGNITION_URL=http://facerecognition:8080
+    env_file:
+      - "${ENV_FILE:-./VirtualTeacher2.0/installer/.env}"
+    depends_on:
+      - chatbot
+      - facerecognition
+    networks:
+      - smart-learning-network
+
+  # ========================================
+  # Face Recognition Backend (NEW)
+  # ========================================
+  facerecognition:
+    image: face-recognition-backend:${FACE_REC_TAG:-latest}
+    container_name: facerecognition-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - TZ=${TIMEZONE:-Asia/Shanghai}
+      - DJANGO_SETTINGS_MODULE=face_recognition_backend.settings
+    volumes:
+      - facerecognition-db-data:/app/db
+      - ./FaceRecgnotion/face_recognition_backend/logs:/app/logs
+    networks:
+      - smart-learning-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/api/session/start -X POST || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ========================================
+  # Nginx Gateway
+  # ========================================
+  nginx:
+    image: okapi0129/virtualwife-gateway:${GATEWAY_TAG:-latest}
+    container_name: smart-learning-gateway
+    restart: unless-stopped
+    ports:
+      - ${NGINX_HTTP_PORT:-80}:80
+      - ${NGINX_HTTPS_PORT:-443}:443
+    environment:
+      - TZ=${TIMEZONE:-Asia/Shanghai}
+    env_file:
+      - "${ENV_FILE:-./VirtualTeacher2.0/installer/.env}"
+    volumes:
+      - ./VirtualTeacher2.0/infrastructure-gateway/conf.d:/etc/nginx/conf.d:ro
+    depends_on:
+      - chatbot
+      - chatvrm
+      - facerecognition
+    networks:
+      - smart-learning-network
+
+networks:
+  smart-learning-network:
+    driver: bridge
+
+volumes:
+  facerecognition-db-data:
