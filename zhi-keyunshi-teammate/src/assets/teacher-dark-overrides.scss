@@ -1,0 +1,556 @@
+/**
+ * 教师端深色壳：在 .teacher-app-dark 下统一玻璃拟态，覆盖各页 scoped 白底与 migration 全局卡片。
+ */
+$td-glass: #ffffff;
+$td-border: rgba(30, 109, 242, 0.14);
+$td-text: #0b2b4a;
+$td-muted: #5e7e9c;
+$td-input: #ffffff;
+$accent: #ff8a2c;
+$accent-deep: #e86f12;
+
+/* 统一尺寸规范（教师端） */
+$unified-title-size: 28px;
+$unified-title-weight: 700;
+$unified-btn-height: 40px;
+$unified-btn-radius: 12px;
+$unified-pill-radius: 999px;
+$unified-input-height: 40px;
+$unified-input-radius: 12px;
+
+.teacher-app-dark .main-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 20px 22px 28px;
+  background: transparent !important;
+  color: #ffffff;
+}
+
+/* 标题统一 */
+.teacher-app-dark .page-header .title-text h1,
+.teacher-app-dark .page-header h1 {
+  font-size: $unified-title-size !important;
+  font-weight: $unified-title-weight !important;
+  line-height: 1.25 !important;
+}
+
+/* 按钮统一（胶囊按钮除外） */
+.teacher-app-dark button,
+.teacher-app-dark .btn,
+.teacher-app-dark .btn-primary,
+.teacher-app-dark .btn-ghost,
+.teacher-app-dark .btn-danger,
+.teacher-app-dark .btn-edit,
+.teacher-app-dark .btn-save,
+.teacher-app-dark .btn-delete,
+.teacher-app-dark .btn-refresh,
+.teacher-app-dark .btn-outline,
+.teacher-app-dark .btn-preview,
+.teacher-app-dark .btn-clear,
+.teacher-app-dark .btn-export,
+.teacher-app-dark .btn-sign,
+.teacher-app-dark .btn-mark,
+.teacher-app-dark .btn-undo {
+  min-height: $unified-btn-height !important;
+  border-radius: $unified-btn-radius !important;
+  font-weight: 600 !important;
+}
+
+/* 胶囊按钮保留统一胶囊风格 */
+.teacher-app-dark .btn-generate,
+.teacher-app-dark .btn-publish,
+.teacher-app-dark .btn-manual-sign,
+.teacher-app-dark .btn-upload-photo,
+.teacher-app-dark .btn-ai-generate,
+.teacher-app-dark .ai-badge-large,
+.teacher-app-dark .class-selector {
+  border-radius: $unified-pill-radius !important;
+}
+
+/* 输入框统一 */
+.teacher-app-dark input[type="text"],
+.teacher-app-dark input[type="password"],
+.teacher-app-dark input[type="number"],
+.teacher-app-dark input[type="datetime-local"],
+.teacher-app-dark textarea,
+.teacher-app-dark select {
+  border-radius: $unified-input-radius !important;
+}
+
+.teacher-app-dark input[type="text"],
+.teacher-app-dark input[type="password"],
+.teacher-app-dark input[type="number"],
+.teacher-app-dark input[type="datetime-local"],
+.teacher-app-dark select {
+  height: $unified-input-height !important;
+}
+
+/* 页面根：透明，避免大块白底 */
+.teacher-app-dark .dashboard-page,
+.teacher-app-dark .student-data-board,
+.teacher-app-dark .publish-task-page,
+.teacher-app-dark .sign-in-page,
+.teacher-app-dark .student-manage-page,
+.teacher-app-dark .homework-manage-page,
+.teacher-app-dark .ppt-upload-page,
+.teacher-app-dark .ai-teaching-design,
+.teacher-app-dark .ai-courseware-page {
+  background: transparent !important;
+  color: #ffffff;
+}
+
+/* 通用玻璃面板（覆盖 migration 的 !important） */
+.teacher-app-dark .card,
+.teacher-app-dark .welcome-section,
+.teacher-app-dark .form-card,
+.teacher-app-dark .input-card,
+.teacher-app-dark .question-list-card,
+.teacher-app-dark .control-card,
+.teacher-app-dark .sign-records,
+.teacher-app-dark .modal-card,
+.teacher-app-dark .upload-section.card,
+.teacher-app-dark .history-section.card,
+.teacher-app-dark .stat-card,
+.teacher-app-dark .weak-points-card,
+.teacher-app-dark .trend-card,
+.teacher-app-dark .subject-weakness,
+.teacher-app-dark .student-activity-card,
+.teacher-app-dark .card-custom,
+.teacher-app-dark .search-filter-bar,
+.teacher-app-dark .filter-area,
+.teacher-app-dark .agent-result-box {
+  background: $td-glass !important;
+  border: 1px solid $td-border !important;
+  box-shadow: 0 10px 28px rgba(10, 75, 176, 0.08) !important;
+  color: $td-text !important;
+}
+
+.teacher-app-dark .weak-warning {
+  background: rgba(255, 193, 94, 0.12) !important;
+  border: 1px solid rgba(255, 193, 94, 0.28) !important;
+  border-left: 4px solid rgba(255, 193, 94, 0.75) !important;
+}
+
+.teacher-app-dark .warning-header {
+  color: rgba(255, 224, 170, 0.98) !important;
+}
+
+.teacher-app-dark .agent-result-title {
+  color: rgba(255, 224, 170, 0.95) !important;
+}
+
+.teacher-app-dark .welcome-text h1,
+.teacher-app-dark .title-text h1,
+.teacher-app-dark .title-text h2,
+.teacher-app-dark .page-header .title-text h1,
+.teacher-app-dark .page-header .title-text h2 {
+  color: #ffffff !important;
+}
+
+.teacher-app-dark .card-header h3,
+.teacher-app-dark .records-header h3,
+.teacher-app-dark .list-header h3 {
+  color: #0b2b4a !important;
+}
+
+.teacher-app-dark .welcome-text .date,
+.teacher-app-dark .title-text p,
+.teacher-app-dark .form-subtitle,
+.teacher-app-dark .card-header .badge-sm,
+.teacher-app-dark .stat-label,
+.teacher-app-dark .stat-trend,
+.teacher-app-dark .todo-meta,
+.teacher-app-dark .class-stats,
+.teacher-app-dark .weak-class,
+.teacher-app-dark .agent-result-content {
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+
+.teacher-app-dark .todo-title,
+.teacher-app-dark .class-name,
+.teacher-app-dark .weak-name,
+.teacher-app-dark .message-form label,
+.teacher-app-dark .section-header h3,
+.teacher-app-dark .list-header h3 {
+  color: $td-text !important;
+}
+
+.teacher-app-dark .stat-number {
+  color: $accent !important;
+}
+
+.teacher-app-dark .teacher-avatar i {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.teacher-app-dark .status-msg {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: $td-border !important;
+  color: $td-muted !important;
+}
+
+.teacher-app-dark .todo-item {
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.teacher-app-dark .todo-input,
+.teacher-app-dark .message-input,
+.teacher-app-dark input[type="text"],
+.teacher-app-dark input[type="password"],
+.teacher-app-dark input[type="number"],
+.teacher-app-dark input[type="datetime-local"],
+.teacher-app-dark textarea,
+.teacher-app-dark select {
+  background: $td-input !important;
+  border-color: $td-border !important;
+  color: $td-text !important;
+}
+
+.teacher-app-dark .todo-toggle-btn.text,
+.teacher-app-dark .todo-delete-btn.text {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: $td-border !important;
+  color: $td-text !important;
+}
+
+.teacher-app-dark .class-item .progress-bar,
+.teacher-app-dark .progress-bar {
+  background: rgba(0, 0, 0, 0.25) !important;
+}
+
+.teacher-app-dark .page-header,
+.teacher-app-dark .records-header,
+.teacher-app-dark .table-header,
+.teacher-app-dark .activity-head,
+.teacher-app-dark .table-head,
+.teacher-app-dark .list-header {
+  border-color: $td-border !important;
+  color: $td-text;
+}
+
+.teacher-app-dark .record-table,
+.teacher-app-dark .table-body,
+.teacher-app-dark .activity-body,
+.teacher-app-dark .table-wrap,
+.teacher-app-dark .rows .row {
+  background: #f8fcff !important;
+  color: $td-text;
+}
+
+.teacher-app-dark .table-footer,
+.teacher-app-dark .table-body .table-row,
+.teacher-app-dark .activity-body .activity-row {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.teacher-app-dark .ai-badge-large,
+.teacher-app-dark .class-filter,
+.teacher-app-dark .ai-panel {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(255, 255, 255, 0.24) !important;
+  color: #ffffff !important;
+}
+
+.teacher-app-dark .question-editor,
+.teacher-app-dark .question-main,
+.teacher-app-dark .split-item,
+.teacher-app-dark .design-section,
+.teacher-app-dark .preview-panel,
+.teacher-app-dark .slides-grid .slide-item,
+.teacher-app-dark .chart-container,
+.teacher-app-dark .bar-chart .bar-wrapper {
+  background: #f8fcff !important;
+  border-color: $td-border !important;
+  color: $td-text !important;
+}
+
+.teacher-app-dark .empty-icon,
+.teacher-app-dark .example-topics {
+  color: $td-muted !important;
+}
+
+.teacher-app-dark .modal-body,
+.teacher-app-dark .search-results {
+  color: $td-text;
+}
+
+.teacher-app-dark a.router-link-active {
+  color: inherit;
+}
+
+.teacher-app-dark .subtitle,
+.teacher-app-dark .page-header .subtitle {
+  color: $td-muted !important;
+}
+
+.teacher-app-dark .class-selector {
+  background: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: none !important;
+  border: 1px solid $td-border !important;
+}
+
+.teacher-app-dark .class-selector select {
+  color: #ffffff !important;
+}
+
+.teacher-app-dark .class-filter-badge,
+.teacher-app-dark .class-selector-badge {
+  background: linear-gradient(145deg, #1e6df2, #0a4bb0) !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(30, 109, 242, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.teacher-app-dark .class-filter-badge select,
+.teacher-app-dark .class-selector-badge select {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+
+.teacher-app-dark .photo-uploader {
+  background: #f8fcff !important;
+  border-color: $td-border !important;
+}
+
+.teacher-app-dark .photo-uploader h3 {
+  color: #0b2b4a !important;
+}
+
+.teacher-app-dark .photo-uploader p {
+  color: #5e7e9c !important;
+}
+
+.teacher-app-dark .stats-summary {
+  background: #f8fcff !important;
+  border: 1px solid $td-border !important;
+}
+
+.teacher-app-dark .stats-summary .stat-label {
+  color: #5e7e9c !important;
+}
+
+.teacher-app-dark .stats-summary .stat-number,
+.teacher-app-dark .stats-summary .stat-percent {
+  color: #0b2b4a !important;
+}
+
+.teacher-app-dark .homework-manage-page .title {
+  color: $td-text !important;
+}
+
+.teacher-app-dark .homework-manage-page .meta {
+  color: $td-muted !important;
+}
+
+.teacher-app-dark .homework-manage-page .row {
+  background: #f8fcff !important;
+  border-color: $td-border !important;
+}
+
+.teacher-app-dark .homework-manage-page .row.active {
+  background: #eef5ff !important;
+  border-color: rgba(30, 109, 242, 0.35) !important;
+}
+
+.teacher-app-dark .detail-grade-bar {
+  background: #f5f9ff !important;
+  border-color: $td-border !important;
+}
+
+.teacher-app-dark .grade-pill {
+  background: #ffffff !important;
+  border-color: $td-border !important;
+  color: $td-text !important;
+}
+
+.teacher-app-dark .grade-clear {
+  background: #ffffff !important;
+  color: #5e7e9c !important;
+}
+
+.teacher-app-dark .btn {
+  background: #ffffff !important;
+  border-color: $td-border !important;
+  color: $td-text !important;
+}
+
+.teacher-app-dark .empty {
+  color: $td-muted !important;
+}
+
+.teacher-app-dark .records-header h3,
+.teacher-app-dark .records-header h3 i {
+  color: $td-text !important;
+}
+
+.teacher-app-dark .record-table,
+.teacher-app-dark .table-row {
+  color: $td-text;
+}
+
+.teacher-app-dark .question-content,
+.teacher-app-dark .question-header,
+.teacher-app-dark .question-index {
+  color: $td-text !important;
+}
+
+.teacher-app-dark .form-section,
+.teacher-app-dark .ai-quick-entry,
+.teacher-app-dark .invite-list,
+.teacher-app-dark .import-row,
+.teacher-app-dark .add-class-row {
+  color: $td-text;
+}
+
+.teacher-app-dark .section-header h3,
+.teacher-app-dark .section-header i {
+  color: $td-text !important;
+}
+
+.teacher-app-dark .question-type-tabs .type-btn {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: $td-text !important;
+  border-color: $td-border !important;
+}
+
+.teacher-app-dark .question-type-tabs .type-btn.active {
+  background: linear-gradient(135deg, $accent, $accent-deep) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.teacher-app-dark .question-type-badge {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: $td-text !important;
+  border: 1px solid $td-border !important;
+}
+
+/* 亮橙：主操作与强调（与学端一致） */
+.teacher-app-dark .btn-add-todo,
+.teacher-app-dark .btn-send-message,
+.teacher-app-dark .btn-weak-link,
+.teacher-app-dark .btn-upload-photo,
+.teacher-app-dark .btn-manual-sign,
+.teacher-app-dark .records-header .btn-manual-sign,
+.teacher-app-dark .page-header .btn-manual-sign {
+  background: linear-gradient(135deg, $accent, $accent-deep) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 6px 16px rgba(255, 120, 40, 0.28) !important;
+}
+
+.teacher-app-dark .btn-weak-link:disabled {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  box-shadow: none !important;
+}
+
+.teacher-app-dark .more-link,
+.teacher-app-dark .card-header .more-link {
+  color: #ffcfa0 !important;
+}
+
+.teacher-app-dark .badge-sm {
+  background: rgba(255, 138, 44, 0.22) !important;
+  color: #ffe8d2 !important;
+  border: 1px solid rgba(255, 180, 120, 0.35) !important;
+}
+
+.teacher-app-dark .card-header h3 i {
+  color: $accent !important;
+}
+
+.teacher-app-dark .class-item .progress-fill {
+  background: linear-gradient(90deg, $accent, $accent-deep) !important;
+}
+
+/* --------- 修正：避免内容区文字被过度提亮 --------- */
+.teacher-app-dark .card,
+.teacher-app-dark .welcome-section,
+.teacher-app-dark .stat-card,
+.teacher-app-dark .sign-records,
+.teacher-app-dark .control-card,
+.teacher-app-dark .upload-section.card,
+.teacher-app-dark .history-section.card,
+.teacher-app-dark .subject-weakness,
+.teacher-app-dark .student-activity-card {
+  color: #0b2b4a !important;
+}
+
+.teacher-app-dark .card .subtitle,
+.teacher-app-dark .card .hint,
+.teacher-app-dark .card .meta,
+.teacher-app-dark .card .stat-label,
+.teacher-app-dark .card .stat-trend,
+.teacher-app-dark .card .todo-meta,
+.teacher-app-dark .card .item-meta,
+.teacher-app-dark .card .class-stats {
+  color: #5e7e9c !important;
+}
+
+/* 教师端页面顶部标题统一可见（白色） */
+.teacher-app-dark .page-header .title-text h1,
+.teacher-app-dark .page-header h1,
+.teacher-app-dark .page-header .subtitle,
+.teacher-app-dark .page-header p {
+  color: #ffffff !important;
+}
+
+/* 教师工作台首卡恢复深色文字，避免“空白” */
+.teacher-app-dark .dashboard-page .welcome-section .welcome-text h1 {
+  color: #0b2b4a !important;
+}
+.teacher-app-dark .dashboard-page .welcome-section .welcome-text .date {
+  color: #5e7e9c !important;
+}
+
+/* “X项未完成”改为和下方主按钮一致的橙色体系 */
+.teacher-app-dark .dashboard-page .badge-sm {
+  background: linear-gradient(135deg, #ff8a2c, #e86f12) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+/* PPT上传页标题明确白色 */
+.teacher-app-dark .ppt-upload-page .page-header h1,
+.teacher-app-dark .ppt-upload-page .page-header .subtitle {
+  color: #ffffff !important;
+}
+
+/* 学生数据看板首行统计卡：图标与文案恢复可见 */
+.teacher-app-dark .student-data-board .stat-label,
+.teacher-app-dark .student-data-board .stat-trend {
+  color: #5e7e9c !important;
+}
+.teacher-app-dark .student-data-board .stat-value {
+  color: #0b2b4a !important;
+}
+
+/* 学生数据看板：去掉左侧紫色/绿色装饰方块 */
+.teacher-app-dark .student-data-board .stat-icon {
+  display: none !important;
+}
+
+/* 学生数据看板：去掉“全部班级”后面的白色框 */
+.teacher-app-dark .student-data-board .class-filter {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* 班级薄弱知识点预警：班级标签改为黑字 */
+.teacher-app-dark .dashboard-page .weak-warning .weak-class {
+  color: #0b2b4a !important;
+  background: #edf2f7 !important;
+  border: 1px solid #d8e2ef !important;
+}
+
+/* 学生管理页顶部标题改白色 */
+.teacher-app-dark .student-manage-page .page-header h1,
+.teacher-app-dark .student-manage-page .page-header p {
+  color: #ffffff !important;
+}

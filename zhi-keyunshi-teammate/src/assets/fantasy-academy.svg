@@ -1,0 +1,66 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#173e86"/>
+      <stop offset="55%" stop-color="#2d74c7"/>
+      <stop offset="100%" stop-color="#89d7ff"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7e7b1"/>
+      <stop offset="100%" stop-color="#cf9f52"/>
+    </linearGradient>
+    <linearGradient id="tower" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eaf4ff"/>
+      <stop offset="100%" stop-color="#98b8e3"/>
+    </linearGradient>
+    <linearGradient id="window" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff2b6"/>
+      <stop offset="100%" stop-color="#ffbd4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="420" rx="32" fill="url(#sky)"/>
+  <circle cx="1030" cy="84" r="38" fill="#fff2b6" opacity="0.92"/>
+  <circle cx="1030" cy="84" r="74" fill="#fff2b6" opacity="0.18"/>
+  <g opacity="0.45">
+    <path d="M164 100C164 76 184 56 208 56H340C364 56 384 76 384 100V128H164V100Z" fill="#fff"/>
+    <path d="M782 82C782 62 798 46 818 46H952C972 46 988 62 988 82V108H782V82Z" fill="#fff"/>
+  </g>
+  <path d="M0 292C108 248 188 248 296 292C404 336 484 336 592 292C700 248 780 248 888 292C996 336 1076 336 1200 292V420H0V292Z" fill="url(#ground)"/>
+  <g transform="translate(88 118)">
+    <rect x="0" y="88" width="148" height="130" rx="16" fill="url(#tower)"/>
+    <path d="M14 88L74 18L134 88H14Z" fill="#6e9ad8"/>
+    <rect x="36" y="120" width="28" height="34" rx="6" fill="url(#window)"/>
+    <rect x="84" y="120" width="28" height="34" rx="6" fill="url(#window)"/>
+  </g>
+  <g transform="translate(360 82)">
+    <rect x="0" y="66" width="180" height="158" rx="18" fill="url(#tower)"/>
+    <path d="M20 66L90 0L160 66H20Z" fill="#5d88c8"/>
+    <rect x="60" y="106" width="60" height="118" rx="30" fill="#7eb1e9"/>
+    <path d="M78 128L102 128L90 146L102 164L78 164L66 146L78 128Z" fill="#ff6d8a"/>
+  </g>
+  <g transform="translate(828 110)">
+    <rect x="0" y="84" width="150" height="134" rx="16" fill="url(#tower)"/>
+    <path d="M14 84L75 16L136 84H14Z" fill="#6e9ad8"/>
+    <rect x="35" y="118" width="28" height="34" rx="6" fill="url(#window)"/>
+    <rect x="87" y="118" width="28" height="34" rx="6" fill="url(#window)"/>
+  </g>
+  <g opacity="0.8">
+    <circle cx="272" cy="72" r="6" fill="#fff"/>
+    <circle cx="308" cy="54" r="4" fill="#fff"/>
+    <circle cx="486" cy="62" r="5" fill="#fff"/>
+    <circle cx="538" cy="42" r="4" fill="#fff"/>
+    <circle cx="708" cy="62" r="6" fill="#fff"/>
+    <circle cx="758" cy="40" r="4" fill="#fff"/>
+    <circle cx="940" cy="50" r="5" fill="#fff"/>
+  </g>
+  <g transform="translate(516 136)">
+    <path d="M0 118C20 84 50 64 80 64C110 64 138 84 158 118" stroke="#4d356a" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="80" cy="92" r="30" fill="#f4d4b6"/>
+    <path d="M54 90C60 67 73 54 90 54C104 54 116 62 122 76" fill="#34495e"/>
+    <rect x="52" y="124" width="56" height="48" rx="14" fill="#8e6bf0"/>
+    <rect x="38" y="160" width="84" height="18" rx="9" fill="#5a4e86"/>
+    <path d="M54 124L34 164" stroke="#c1d6ff" stroke-width="7" stroke-linecap="round"/>
+    <path d="M106 124L128 108" stroke="#c1d6ff" stroke-width="7" stroke-linecap="round"/>
+    <path d="M130 108L154 100" stroke="#c1d6ff" stroke-width="7" stroke-linecap="round"/>
+  </g>
+</svg>

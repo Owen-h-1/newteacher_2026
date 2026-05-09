@@ -1,0 +1,265 @@
+/**
+ * 智课云师 · 最小迁移包 — 全局主题（从 src/assets/main.scss 第 5 节提取）
+ * 用法：在「原版」入口 HTML 或 main.ts 中 import 本文件，且放在会冲突的样式之后（或提高优先级）。
+ * 依赖：页面使用与本项目一致的 class（btn-primary、card-custom、page-container 等），见 README。
+ */
+
+:root {
+  --edu-primary: #1e5e86;
+  --edu-primary-hover: #184f70;
+  --edu-accent: #2f8f83;
+  --edu-soft-bg: #f4f8ff;
+  --edu-page-bg: #f7fafd;
+  --edu-card-bg: #ffffff;
+  --edu-border: #d8e4f2;
+  --edu-text: #2f3b4a;
+  --edu-muted: #6b7f94;
+  --edu-shadow: 0 10px 22px rgba(16, 47, 82, 0.08);
+  --edu-radius-card: 16px;
+  --edu-radius-control: 10px;
+  --edu-space-section: 20px;
+}
+
+body {
+  background: var(--edu-page-bg);
+  color: var(--edu-text);
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page-container {
+  padding: 20px !important;
+  background: transparent !important;
+}
+
+.card-custom,
+.page-container > .card-custom,
+.layout-content > .card-custom,
+.page-container .page-container,
+.form-card,
+.question-list-card,
+.search-filter-bar,
+.filter-area,
+.test-categories,
+.test-rules,
+.layout-sidebar {
+  background: var(--edu-card-bg) !important;
+  border: 1px solid var(--edu-border) !important;
+  border-radius: var(--edu-radius-card) !important;
+  box-shadow: var(--edu-shadow) !important;
+}
+
+.card-secondary {
+  background: #f8fbff !important;
+  border-color: #cfe0f3 !important;
+}
+
+.card-custom,
+.form-card,
+.question-list-card,
+.search-filter-bar,
+.filter-area,
+.test-categories,
+.test-rules {
+  padding: 20px !important;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-text {
+  height: 38px !important;
+  border-radius: var(--edu-radius-control) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+}
+
+[class^="btn-"],
+[class*=" btn-"] {
+  border-radius: var(--edu-radius-control) !important;
+  font-weight: 600 !important;
+}
+
+.type-btn,
+.btn-add-question,
+.btn-ai-generate,
+.btn-clear,
+.btn-preview,
+.btn-publish,
+.btn-login {
+  height: 38px !important;
+  border-radius: var(--edu-radius-control) !important;
+  font-weight: 700 !important;
+  transition: all 0.2s ease !important;
+}
+
+.type-btn,
+.btn-preview,
+.btn-ai-generate,
+.btn-clear {
+  background: #ffffff !important;
+  color: var(--edu-primary) !important;
+  border: 1px solid #9ebad8 !important;
+}
+
+.type-btn:hover,
+.btn-preview:hover,
+.btn-ai-generate:hover,
+.btn-clear:hover {
+  background: #eef5fc !important;
+}
+
+.type-btn.active,
+.btn-add-question,
+.btn-publish {
+  background: var(--edu-primary) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--edu-primary) !important;
+  box-shadow: 0 6px 14px rgba(30, 94, 134, 0.2) !important;
+}
+
+.btn-add-question:hover,
+.btn-publish:hover {
+  background: var(--edu-primary-hover) !important;
+  border-color: var(--edu-primary-hover) !important;
+}
+
+.menu-item.active,
+.category-item.active {
+  background: var(--edu-primary) !important;
+  color: #fff !important;
+}
+
+.status-tag,
+.homework-status,
+.question-type-badge,
+.course-tag {
+  border-radius: 999px !important;
+  padding: 3px 10px !important;
+  font-weight: 600 !important;
+}
+
+.overview-item,
+.chart-area,
+.sign-in-qrcode,
+.sign-in-stat {
+  border-radius: 12px !important;
+  border: 1px solid #d8e4f2 !important;
+  background: #f8fbff !important;
+}
+
+.progress-fill {
+  transform-origin: left;
+  animation: eduProgressGrow 0.8s ease;
+}
+
+@keyframes eduProgressGrow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.btn-primary {
+  background: var(--edu-primary) !important;
+  color: #fff !important;
+  border: 1px solid var(--edu-primary) !important;
+  box-shadow: 0 6px 14px rgba(30, 94, 134, 0.2) !important;
+}
+
+.btn-primary:hover {
+  background: var(--edu-primary-hover) !important;
+  border-color: var(--edu-primary-hover) !important;
+}
+
+.btn-secondary {
+  background: #ffffff !important;
+  color: var(--edu-primary) !important;
+  border: 1px solid #9ebad8 !important;
+}
+
+.btn-secondary:hover {
+  background: #eef5fc !important;
+}
+
+.btn-text {
+  background: transparent !important;
+  color: var(--edu-primary) !important;
+  border: 1px solid transparent !important;
+}
+
+.btn-text:hover {
+  background: #edf5ff !important;
+  color: var(--edu-primary-hover) !important;
+}
+
+.input-custom,
+.select-custom,
+input[type="text"],
+input[type="password"],
+input[type="datetime-local"],
+input[type="number"],
+textarea,
+select {
+  border-radius: var(--edu-radius-control) !important;
+  border: 1px solid var(--edu-border) !important;
+  background: #fff !important;
+}
+
+.input-custom:focus,
+.select-custom:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #8fb3d8 !important;
+  box-shadow: 0 0 0 3px rgba(30, 94, 134, 0.12) !important;
+  outline: none !important;
+}
+
+.dashboard-cards,
+.course-list,
+.homework-list,
+.test-list,
+.data-overview,
+.layout-container,
+.search-filter-bar,
+.filter-area,
+.sign-in-list,
+.student-data-table {
+  margin-top: var(--edu-space-section);
+}
+
+.login-page {
+  background: linear-gradient(180deg, #f2f7ff 0%, #f7fcf8 100%) !important;
+}
+
+.login-page .login-container {
+  border-radius: 20px !important;
+  border: 1px solid var(--edu-border) !important;
+  box-shadow: var(--edu-shadow) !important;
+}
+
+.login-page .brand-side {
+  background: linear-gradient(160deg, #1e5e86 0%, #2f8f83 100%) !important;
+}
+
+.login-page .btn-login {
+  border-radius: 10px !important;
+  background: var(--edu-primary) !important;
+  box-shadow: 0 6px 14px rgba(30, 94, 134, 0.2) !important;
+}
+
+.login-page .btn-login:hover:not(:disabled) {
+  background: var(--edu-primary-hover) !important;
+  transform: none !important;
+}
+
+.page-container > h1,
+.page-container > h2 {
+  margin-bottom: 12px;
+}

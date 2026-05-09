@@ -1,0 +1,47 @@
+{
+  "users": [
+    {
+      "id": "u_teacher_001",
+      "username": "teacher",
+      "email": "teacher@example.com",
+      "role": "teacher",
+      "name": "张老师",
+      "passwordHash": "$2b$10$pFp4R80oExXMRpR0QVrp9uArwuNO29ZxkllyWNXYXe.W69yM4aSe."
+    },
+    {
+      "id": "u_student_001",
+      "username": "student",
+      "email": "student@example.com",
+      "role": "student",
+      "name": "张明远",
+      "passwordHash": "$2b$10$pFp4R80oExXMRpR0QVrp9uArwuNO29ZxkllyWNXYXe.W69yM4aSe."
+    }
+  ],
+  "homework": [
+    {
+      "id": "hw_001",
+      "subject": "数学",
+      "subjectClass": "math",
+      "subjectIcon": "fas fa-calculator",
+      "title": "两位数乘法专项练习",
+      "teacherId": "u_teacher_001",
+      "teacher": "张老师",
+      "className": "三年级(1)班",
+      "deadline": "今日 18:00",
+      "type": "选择题+解答题",
+      "questionCount": 8,
+      "difficultyText": "进阶",
+      "description": "包含两位数乘法、口算与应用题综合训练",
+      "questions": [],
+      "createdAt": "2026-04-06T07:00:00.000Z"
+    }
+  ],
+  "submissions": [
+    {
+      "id": "8c32fba1-ac66-4b40-b7d9-da1e539dc3b3",
+      "homeworkId": "hw_001",
+      "studentId": "u_student_001",
+      "submitTime": "2026-04-06T08:34:42.012Z"
+    }
+  ]
+}
