@@ -1,0 +1,19 @@
+Data Consistency Audit Report
+Generated At: 2026-05-15 21:46:54
+
+=== Summary ===
+classes.total = 3
+students.total = 118
+homework.total = 1
+classes.owner_teacher_id.invalid = 0
+students.class_id.orphan = 0
+homework.class_id.orphan = 0
+
+=== Invalid class owner samples (top 20) ===
+(none)
+
+=== Student class orphan samples (top 20) ===
+(none)
+
+=== Homework class orphan samples (top 20) ===
+(none)

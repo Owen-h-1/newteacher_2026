@@ -1,0 +1,26 @@
+# 本地开发用 MySQL，与根目录 .env.example 默认账号一致
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: zhi-keyunshi-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+      MYSQL_DATABASE: zhi_keyunshi
+    ports:
+      - "3306:3306"
+    volumes:
+      - zhi_keyunshi_mysql:/var/lib/mysql
+    command:
+      - mysqld
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-p123456"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 15s
+
+volumes:
+  zhi_keyunshi_mysql:
